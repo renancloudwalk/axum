@@ -14,6 +14,7 @@ pub(crate) struct NotSendSync(*const ());
 #[cfg(feature = "integration_tests")]
 pub mod integration_tests {
     use super::{BoxError, HttpBody};
+    use crate::test_helpers::TestClient;
     use bytes::Bytes;
     use http::{
         header::{HeaderName, HeaderValue},
@@ -26,7 +27,6 @@ pub mod integration_tests {
     };
     use tower::make::Shared;
     use tower_service::Service;
-    use crate::test_helpers::TestClient;
 
     pub fn new<S, ResBody>(svc: S) -> TestClient
     where
