@@ -407,7 +407,7 @@ pub mod middleware;
 pub mod response;
 pub mod routing;
 
-#[cfg(test)]
+#[cfg(any(test, feature = "integration_tests"))]
 pub mod test_helpers;
 
 #[doc(no_inline)]
