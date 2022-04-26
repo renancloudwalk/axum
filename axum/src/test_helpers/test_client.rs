@@ -12,7 +12,7 @@ use std::{
 use tower::make::Shared;
 use tower_service::Service;
 
-pub(crate) struct TestClient {
+pub struct TestClient {
     client: reqwest::Client,
     addr: SocketAddr,
 }

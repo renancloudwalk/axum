@@ -407,8 +407,8 @@ pub mod middleware;
 pub mod response;
 pub mod routing;
 
-#[cfg(test)]
-mod test_helpers;
+#[cfg(any(test, feature = "integration_tests"))]
+pub mod test_helpers;
 
 #[doc(no_inline)]
 pub use async_trait::async_trait;
